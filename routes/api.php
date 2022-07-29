@@ -9,20 +9,20 @@ Route::group(['middleware' => ['api','lang'],'namespace' => 'Api'], function () 
 
 
 
-    Route::group(['namespace' => 'Assigned'], function () {
-        // Assigned////////
-        Route::group([ 'prefix' => 'assigned'], function () {
+    Route::group(['namespace' => 'Tag'], function () {
+        // tag////////
+        Route::group([ 'prefix' => 'tags'], function () {
         // index
-        Route::get('/', 'AssignedController@index');
+        Route::get('/', 'TagController@index');
         // create
-        Route::post('/', 'AssignedController@store');
+        Route::post('/', 'TagController@store');
         // get
-        Route::get('{assigned}', 'AssignedController@get');
+        Route::get('{tag}', 'TagController@get');
         // update
-        Route::put('{assigned}', 'AssignedController@update');
+        Route::put('{tag}', 'TagController@update');
         // delete
-        Route::delete('bulkDelete', 'AssignedController@bulkDelete');
-        Route::post('bulkRestore', 'AssignedController@bulkRestore');
+        Route::delete('bulkDelete', 'TagController@bulkDelete');
+        Route::post('bulkRestore', 'TagController@bulkRestore');
         });
     });
 

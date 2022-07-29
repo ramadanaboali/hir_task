@@ -21,9 +21,5 @@ interface AbstractRepoInterface
     public function Inputs(Array $data);
     public function Paginate(Array $input,Array $wheres);
     public function whereOptions(Array $input,Array $columns);
-    public function sendSMS(string $sms_mobile,string $sms_message);
-    public function smsTwillio(string $sms_mobile,string $sms_message);
     public function generateRandomString(int $length);
-    public function getDeviceTokens(array $ids);
-    public function send_notification($registration_ids,$message);
 }

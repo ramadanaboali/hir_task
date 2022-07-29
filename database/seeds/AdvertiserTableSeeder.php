@@ -11,6 +11,6 @@ class AdvertiserTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Advertiser::factory()->count(50)->create();
+        $result=factory(\App\Models\Advertiser::class, 50)->create();
     }
 }
