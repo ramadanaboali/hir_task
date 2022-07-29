@@ -27,6 +27,25 @@ Route::group(['middleware' => ['api','lang'],'namespace' => 'Api'], function () 
     });
 
 
+
+    Route::group(['namespace' => 'Advertiser'], function () {
+        // tag////////
+        Route::group([ 'prefix' => 'advertisers'], function () {
+            // index
+            Route::get('/', 'AdvertiserController@index');
+            // create
+            Route::post('/', 'AdvertiserController@store');
+            // get
+            Route::get('{advertiser}', 'AdvertiserController@get');
+            // update
+            Route::put('{advertiser}', 'AdvertiserController@update');
+            // delete
+            Route::delete('bulkDelete', 'AdvertiserController@bulkDelete');
+            Route::post('bulkRestore', 'AdvertiserController@bulkRestore');
+        });
+    });
+
+
 });
 
 
