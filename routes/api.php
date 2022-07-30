@@ -29,7 +29,7 @@ Route::group(['middleware' => ['api','lang'],'namespace' => 'Api'], function () 
 
 
     Route::group(['namespace' => 'Advertiser'], function () {
-        // tag////////
+        // Advertiser////////
         Route::group([ 'prefix' => 'advertisers'], function () {
             // index
             Route::get('/', 'AdvertiserController@index');
@@ -47,7 +47,7 @@ Route::group(['middleware' => ['api','lang'],'namespace' => 'Api'], function () 
 
 
     Route::group(['namespace' => 'Category'], function () {
-        // tag////////
+        // Category////////
         Route::group([ 'prefix' => 'categories'], function () {
             // index
             Route::get('/', 'CategoryController@index');
@@ -63,7 +63,22 @@ Route::group(['middleware' => ['api','lang'],'namespace' => 'Api'], function () 
         });
     });
 
-
+    Route::group(['namespace' => 'Ads'], function () {
+        // ads////////
+        Route::group([ 'prefix' => 'ads'], function () {
+            // index
+            Route::get('/', 'AdsController@index');
+            // create
+            Route::post('/', 'AdsController@store');
+            // get
+            Route::get('{ads}', 'AdsController@get');
+            // update
+            Route::put('{ads}', 'AdsController@update');
+            // delete
+            Route::delete('bulkDelete', 'AdsController@bulkDelete');
+            Route::post('bulkRestore', 'AdsController@bulkRestore');
+        });
+    });
 });
 
 

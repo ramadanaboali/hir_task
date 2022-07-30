@@ -23,6 +23,7 @@ class CreateAdsTable extends Migration
             $table->unsignedBigInteger('advertiser_id')->nullable();
             $table->enum("type",["free","paid"])->default("free");
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('category_id')->references('id')->on('categories')
                 ->onDelete('cascade');
             $table->foreign('advertiser_id')->references('id')->on('advertisers')

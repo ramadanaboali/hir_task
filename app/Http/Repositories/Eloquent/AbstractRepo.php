@@ -134,7 +134,7 @@ class AbstractRepo implements AbstractRepoInterface
 
                 if (strtolower($input["operand"][$x]) == "like") {
                     $wheres[] = [$row, strtolower($input["operand"][$x]), '%' . $input["column_values"][$x] . '%'];
-                } else {
+                }  else {
                     $wheres[] = [$row, strtolower($input["operand"][$x]), $input["column_values"][$x]];
                 }
 
