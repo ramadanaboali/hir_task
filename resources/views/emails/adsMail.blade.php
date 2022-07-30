@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>fssmarthome.com</title>
+    <title>Ads.com</title>
 </head>
 <body>
     <h1>{{ $mailData['title'] }}</h1>

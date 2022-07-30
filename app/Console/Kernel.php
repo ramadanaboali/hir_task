@@ -13,9 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\TimeCron::class,
-        Commands\VoiceCron::class,
-        Commands\AlarmCron::class,
+        Commands\EmailCron::class,
     ];
 
     /**
@@ -26,13 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        //  $schedule->command('inspire')->hourly();
-         $schedule->command('time:cron')
-                 ->everyMinute();
-         $schedule->command('voice:cron')
-                 ->everyMinute();
-         $schedule->command('alarm:cron')
-                 ->everyMinute();
+        $schedule->command('email:cron')->timezone('Africa/Cairo')->dailyAt('20:00');
     }
 
     /**

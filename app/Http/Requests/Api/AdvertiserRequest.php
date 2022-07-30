@@ -36,6 +36,7 @@ class AdvertiserRequest extends FormRequest
             {
                 return [
                     'name' => 'required|string|min:2|unique:advertisers,name,NULL,id,deleted_at,NULL',
+                    'email' => 'required|email|unique:advertisers,email,NULL,id,deleted_at,NULL',
 
 
                 ];
@@ -44,7 +45,8 @@ class AdvertiserRequest extends FormRequest
             case 'PUT':
             {
                 return [
-                    'name' => 'required|string|min:2|unique:advertisers,name,NULL,id,deleted_at,NULL',
+                    'name' => 'required|string|min:2',
+                    'email' => 'required|email',
 
                 ];
             }

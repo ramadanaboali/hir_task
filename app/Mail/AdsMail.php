@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ForgetMail extends Mailable
+class AdsMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,7 +30,7 @@ class ForgetMail extends Mailable
      */
     public function build()
     {
-        return $this->subject("Check code at email")
-                    ->view('emails.forgetMail');
+        return $this->subject("Check ads at email")
+                    ->view('emails.adsMail');
     }
 }

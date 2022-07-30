@@ -59,7 +59,8 @@ class AdvertiserController extends Controller
     public function store(AdvertiserRequest $request)
     {
         $input = [
-            'name' => $request->name
+            'name' => $request->name,
+            'email' => $request->email
             ];
 
          $data = $this->repo->create($input);
@@ -78,6 +79,7 @@ class AdvertiserController extends Controller
         $Advertiser = $this->repo->findOrFail($advertiser);
         $input = [
             'name' => $request->name ??  $Advertiser->name,
+            'email' => $request->email ??  $Advertiser->email,
 
         ];
 

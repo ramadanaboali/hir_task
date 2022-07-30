@@ -44,7 +44,7 @@ class TagRequest extends FormRequest
             case 'PUT':
             {
                 return [
-                    'name' => 'required|string|min:2|unique:tags,name,NULL,id,deleted_at,NULL',
+                    'name' => 'required|string|min:2',
 
                 ];
             }
